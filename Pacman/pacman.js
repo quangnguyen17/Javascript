@@ -12,6 +12,8 @@ var dictObj = {
 
 var pacman = { row: 5, col: 5, direction: "up" };
 
+var points = 0;
+
 function generateWorld() {
     for (var row = 0; row < 10; row++) {
         world.push([]);
@@ -107,8 +109,15 @@ document.onkeydown = function (e) {
             break;
     }
 
+    if (world[pacman.row][pacman.col] == 2) {
+        points += 10;
+    } else if (world[pacman.row][pacman.col] == 3) {
+        points += 50;
+    }
+
     refreshWorld();
     rotatePacman();
+    updatePoints();
 }
 
 function rotatePacman() {
@@ -128,4 +137,8 @@ function rotatePacman() {
             pacmanElement.style.transform = "rotate(90deg)";
             break;
     }
+}
+
+function updatePoints() {
+    document.getElementById('points').innerText = `Pts: ${points}`;
 }
