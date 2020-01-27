@@ -14,7 +14,7 @@ body {
     background-size: cover;
 }
 
-.pacman {
+#pacman {
     background-image: url(pacman-moving.gif);
     background-size: cover;
     background-repeat: no-repeat;
@@ -23,6 +23,13 @@ body {
 
 .coin {
     background-image: url(coin-animated.gif);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.cherry {
+    background-image: url(cherry.gif);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
